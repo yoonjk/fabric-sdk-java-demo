@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: fabric-client
+
+user:
+  privateKeyFolder: crypto-config/peerOrganizations/org1.${ORG_DOMAIN:komsco.com}/users/Admin@org1.${ORG_DOMAIN:komsco.com}/msp/keystore
+  signedCert: crypto-config/peerOrganizations/org1.${ORG_DOMAIN:komsco.com}/users/Admin@org1.${ORG_DOMAIN:komsco.com}/msp/signcerts/Admin@org1.${ORG_DOMAIN:komsco.com}-cert.pem
+
+channel:
+  channel_id: ${CHANNEL_NAME:paychannel}
+
+chaincode:
+  chaincode_id: ${CHAINCODE_NAME:mycc}
+  
+members:
+  user_id: Admin@org1.${ORG_DOMAIN:komsco.com}
+  msp_id: Org1MSP
+
+  peer_url: grpcs://peer${PEER_INDEX:2}.org1.${ORG_DOMAIN:komsco.com}:7051
+  peer_tls_cacerts: crypto-config/peerOrganizations/org1.${ORG_DOMAIN:komsco.com}/peers/peer${PEER_INDEX:2}.org1.${ORG_DOMAIN:komsco.com}/tls/ca.crt
+  peer_server_hostname: peer${PEER_INDEX:2}.org1.${ORG_DOMAIN:komsco.com}
+
+orderers:
+  orderer_server_hostname: orderer${ORDERER_INDEX:3}.${ORG_DOMAIN:komsco.com}
+  orderer_tls_cacerts: crypto-config/ordererOrganizations/${ORG_DOMAIN:komsco.com}/orderers/orderer${ORDERER_INDEX:3}.${ORG_DOMAIN:komsco.com}/tls/ca.crt
+  orderer_url: grpcs://orderer${ORDERER_INDEX:3}.${ORG_DOMAIN:komsco.com}:7050
+  

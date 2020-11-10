@@ -1,0 +1,9 @@
+ ____    _____      _      ____    _____
+/ ___|  |_   _|    / \    |  _ \  |_   _|
+\___ \    | |     / _ \   | |_) |   | |
+ ___) |   | |    / ___ \  |  _ <    | |
+|____/    |_|   /_/   \_\ |_| \_\   |_|
+
+Build blockchain network end-to-end test
+
+${AnsiColor.BRIGHT_GREEN}:: Spring Boot ::${AnsiColor.DEFAULT}${spring-boot.formatted-version}
